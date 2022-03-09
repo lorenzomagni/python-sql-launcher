@@ -18,9 +18,14 @@ handler = logging.StreamHandler()
 handler.setLevel(logging.ERROR)
 logging.getLogger('sqlalchemy.engine').addHandler(handler)
 
-#Launch PL/SQL
+#Launch PL/SQL or SQL query
 with engine.connect() as con:
-    rs = con.execute('begin drop_ge_temp; end;')
+    rs = con.execute(sys.argv[5])
+
+#Print the results
+id_count = rs.first()[0]
+print("Query results:")
+print(id_count)
 
 #Exit Python3
 exit()
