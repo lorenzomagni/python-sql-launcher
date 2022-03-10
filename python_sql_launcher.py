@@ -26,7 +26,7 @@ number_of_elements = len(results)
 print("Number of elements in the list: ", number_of_elements)
 for x in range(number_of_elements):
     a = str(x)
-    print("Elemento della lista numero: " + a)
+    print("List element in position: " + a)
     print(results[x])
 
 #Opening the csv file in 'w+' mode
